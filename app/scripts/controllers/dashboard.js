@@ -1,11 +1,30 @@
 'use strict';
 
 angular.module('dashboardControllers', [])
-  .controller('DashboardCtrl', function ($scope, $http, AuthService, StateService, $angularCacheFactory, $q) {
+    .controller('DashboardCtrl', function ($scope, $http, AuthService, StateService, $angularCacheFactory, $q) {
 
     $scope.showChangePassword = false;
     $scope.newPassword = "";
     $scope.verifyPassword = "";
+
+    // Session Modal helper
+    $scope.loadSessionModalDetails = function(sessionID){
+      $scope.courseName = StateService.selectedSession.course.name;
+      $scope.courseId = StateService.selectedSession.id;
+      $scope.startTime = StateService.selectedSession.start_time;
+      $scope.endTime = StateService.selectedSession.end_time;
+      $scope.coordinatorName = StateService.selectedSession.coordinator.first_name;
+      $scope.locationName = StateService.selectedSession.location.name;
+      $scope.roomNumber = StateService.selectedSession.room_number;
+      $scope.joinText = StateService.selectedSession.joinText;
+      $scope.attendees = StateService.selectedSession.attendees;
+
+
+
+
+
+      console.log("Session "+StateService.selectedSession.id+" ("+StateService.selectedSession.course.name+") launched.");
+    };
 
     // Email functionality
     $scope.notifyByEmail = function() {

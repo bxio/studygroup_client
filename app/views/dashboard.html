@@ -163,16 +163,20 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">
-          Title of Studygroup<br />
+          {{courseName}} <br />
           <small>Stuff Here</small>
         </h4>
       </div>
       <div class="modal-body">
-        Details go here
+        <h4 style="pointer-events:none;" class="glyphicon glyphicon-session glyphicon-map-marker"><span class="h5 session-detail">{{ locationName }}<span class="divider">&#183;</span>Room: {{ roomNumber }}</span></h4>
+
+        <a class="calendar-link" href="#" ng-click="addSessionToCalendar(id); $event.stopPropagation()"><h4 style="pointer-events:none;" class="glyphicon glyphicon-session glyphicon-time"><span class="h5 session-detail">{{ startTime.toLocaleDateString() }}<span class="divider">&#183;</span>{{ startTime.toLocaleTimeString() }}</span></h4></a>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Add to Calendar</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Join/Leave</button>
+        <button type="button" class="btn btn-danger" ng-click="loadSessionModalDetails(id)">Load Details</button>
+        <button type="button" class="btn btn-default">Add to Calendar</button>
+        <button type="button" class="btn btn-default">Join/Leave</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
