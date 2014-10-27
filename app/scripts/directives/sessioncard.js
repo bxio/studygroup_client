@@ -29,8 +29,6 @@ angular.module('studygroupClientApp')
           StateService.iCalObj = ics();
           StateService.iCalObj.addEvent($scope.courseName, 'This is an event description from http://studyhostredux.cloudapp.net', $scope.locationName+" Room: "+$scope.roomNumber, $scope.startTime, $scope.endTime);
           return StateService.iCalObj.download();
-
-
         }
 
       }],
