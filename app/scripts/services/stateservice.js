@@ -82,6 +82,12 @@ angular.module('studygroupClientApp')
       return this.iCalObj.download();
     }
 
+    this.addEventToCalendar = function(eventName, eventDescription,eventLocation, eventStartTime, eventEndTime){
+      this.iCalObj = ics();
+      this.iCalObj.addEvent(eventName,eventDescription,eventLocation,eventStartTime,eventEndTime);
+      return this.iCalObj.download();
+    }
+
     this.joinOrLeaveSession = function(sessionID) {
       console.log(sessionID);
       if(AuthService.isAuthenticated()) {
