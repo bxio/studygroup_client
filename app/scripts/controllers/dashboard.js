@@ -7,6 +7,14 @@ angular.module('dashboardControllers', [])
     $scope.newPassword = "";
     $scope.verifyPassword = "";
 
+    $scope.updateSessionModalInfo = function() {
+      console.log("Session "+StateService.selectedSession.id+": "+StateService.selectedSession.course.name+" up on session modal");
+    };
+
+    $scope.addSelectedSessionToCalendar = function() {
+      //StateService.addtocalendar
+    };
+
     // Email functionality
     $scope.notifyByEmail = function() {
       console.log("Email notification initiated.");

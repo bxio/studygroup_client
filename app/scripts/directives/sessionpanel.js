@@ -32,6 +32,7 @@ angular.module('studygroupClientApp')
 
         $scope.selectSession = function(session) {
             google.maps.event.trigger(session.marker, 'click', true);
+            StateService.selectedSession = session;
         }
 
         $scope.getAvailableSessions = function(e, values, removeCourseId) {
@@ -71,10 +72,10 @@ angular.module('studygroupClientApp')
 
                 // Broadcast so that the pins are updated accordingly.
                 if($scope.sessions.length === 0) {
-                    $rootScope.$broadcast('noSessions', true);                
+                    $rootScope.$broadcast('noSessions', true);
                 }
 
-                $rootScope.$broadcast('sessionsChanged');           
+                $rootScope.$broadcast('sessionsChanged');
                 return; // At this point, we can return since there's no need to make a database call if we're removing.
             }
 
@@ -118,13 +119,13 @@ angular.module('studygroupClientApp')
                     isAttending = true;
                     break;
                 }
-            }                        
+            }
 
             if((value.coordinator && value.coordinator.id === StateService.getUserID()) || isAttending) {
                 value.joinText = 'Leave'
             } else {
                 value.joinText = 'Join'
-            }          
+            }
         }
 
         $scope.addNewSession = function(event, session) {
@@ -144,7 +145,7 @@ angular.module('studygroupClientApp')
                 'filterDisplay': StateService.getActiveCourseIDs().indexOf(session.course.id) !== -1 ? true : false,
             };
             $scope.sessions.push(session);
-            $rootScope.$broadcast('sessionsChanged');            
+            $rootScope.$broadcast('sessionsChanged');
         };
 
         $scope.filteredCourse = function() {
@@ -158,11 +159,11 @@ angular.module('studygroupClientApp')
                     $scope.sessions[i].selected = false;
                 }
             }
-            $rootScope.$broadcast('sessionsChanged'); 
+            $rootScope.$broadcast('sessionsChanged');
             if(active_ids.length == 0) {
                 $rootScope.$broadcast('noSessions', true);
-            }                       
-        }; 
+            }
+        };
 
         $scope.displayFilter = function(session) {
             if(session.filterDisplay) {
@@ -188,11 +189,11 @@ angular.module('studygroupClientApp')
                 }
             }
             return false;
-        };        
+        };
 
         $scope.showHostingSessions = function() {
             $rootScope.$emit('displayHostingSessions');
-        } 
+        }
 
         $scope.showAttendingSessions = function() {
             $rootScope.$emit('displayAttendingSessions');
@@ -200,9 +201,9 @@ angular.module('studygroupClientApp')
 
         $scope.showAllSessions = function() {
             $rootScope.$emit('displayAllSessions');
-        }                    
-          
-        $scope.$on('filteredCourse', $scope.filteredCourse);     
+        }
+
+        $scope.$on('filteredCourse', $scope.filteredCourse);
         $scope.$on('sessionCreated', $scope.addNewSession); // Refactor this to call a different function that simply creates a client side session card.
         $scope.$on('changedCourse', $scope.getAvailableSessions);
 
