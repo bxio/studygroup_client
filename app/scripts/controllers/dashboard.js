@@ -12,7 +12,7 @@ angular.module('dashboardControllers', [])
     };
 
     $scope.addSelectedSessionToCalendar = function() {
-      //StateService.addtocalendar
+      return StateService.addToCalendar(StateService.selectedSession);
     };
 
     // Email functionality
