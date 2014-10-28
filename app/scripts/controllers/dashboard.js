@@ -23,6 +23,12 @@ angular.module('dashboardControllers', [])
     };
 
     // Email functionality
+    $scope.addSelectedSessionToCalendar = function() {
+      return StateService.addToCalendar(StateService.selectedSession);
+    };
+
+
+    // Email functionality
     $scope.notifyByEmail = function() {
       console.log("Email notification initiated.");
     };
