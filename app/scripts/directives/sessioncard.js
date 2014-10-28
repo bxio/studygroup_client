@@ -29,7 +29,7 @@ angular.module('studygroupClientApp')
         }
 
         $scope.addSessionToCalendar = function(sessionID) {
-          return StateService.addEventToCalendar($scope.courseName, 'This is an event description from http://studyhostredux.cloudapp.net', $scope.locationName+" Room: "+$scope.roomNumber, $scope.startTime, $scope.endTime);
+          return StateService.addEventToCalendar($scope.courseName, 'This is an event description from http://studypl.us', $scope.locationName+" Room: "+$scope.roomNumber, $scope.startTime, $scope.endTime);
         }
 
       }],

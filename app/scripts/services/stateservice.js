@@ -76,7 +76,7 @@ angular.module('studygroupClientApp')
 
 
     this.addToCalendar = function(session) {
-      return this.addEventToCalendar(session.course.name, "This is an event description from http://studyhostredux.cloudapp.net", session.location.name+" Room: "+session.room_number, session.start_time, session.end_time);
+      return this.addEventToCalendar(session.course.name, "This is an event description from http://studypl.us", session.location.name+" Room: "+session.room_number, session.start_time, session.end_time);
     }
 
     // Parse session to Calendar object
