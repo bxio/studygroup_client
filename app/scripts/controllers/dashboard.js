@@ -19,6 +19,10 @@ angular.module('dashboardControllers', [])
       $scope.joinText = StateService.selectedSession.joinText;
       $scope.attendees = StateService.selectedSession.attendees;
 
+
+
+
+
       console.log("Session "+StateService.selectedSession.id+" ("+StateService.selectedSession.course.name+") launched.");
     };
 
