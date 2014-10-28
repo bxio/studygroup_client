@@ -9,8 +9,8 @@
             <sessioncard ng-repeat="session in filteredSessions = (sessions | filter:displayFilter)"
                          id="{{session.id}}"
                          join-text="session.joinText"
-                         location-name="session.location.name"
-                         room-number="session.room_number"
+                         location-name="session.location.name"  
+                         room-number="session.room_number"          
                          course-name="session.course.name"
                          start-time="session.start_time"
                          end-time="session.end_time"
@@ -32,8 +32,8 @@
             <sessioncard ng-repeat="session in hostingSessions = (sessions | filter:hostingFilter)"
                          id="{{session.id}}"
                          join-text="session.joinText"
-                         location-name="session.location.name"
-                         room-number="session.room_number"
+                         location-name="session.location.name"  
+                         room-number="session.room_number"          
                          course-name="session.course.name"
                          start-time="session.start_time"
                          end-time="session.end_time"
@@ -43,7 +43,7 @@
                          ng-mouseleave="dismissPreviewSession(session)"
                          ng-class="{'session-selected' : session.selected, 'session-not-selected' : !session.selected, 'session-hovered' : session.hovered}"
                          ng-click="selectSession(session)"/>
-        </ul>
+        </ul>    
     </tab>
     <tab disabled="!AuthService.isAuthenticated()" heading="Attending" ng-click="showAttendingSessions();">
         <ul class="media" id="heightRoot" style="margin:10px; padding-left:0px;">
@@ -55,8 +55,8 @@
             <sessioncard ng-repeat="session in attendingSessions = (sessions | filter:attendingFilter)"
                          id="{{session.id}}"
                          join-text="session.joinText"
-                         location-name="session.location.name"
-                         room-number="session.room_number"
+                         location-name="session.location.name"  
+                         room-number="session.room_number"          
                          course-name="session.course.name"
                          start-time="session.start_time"
                          end-time="session.end_time"
@@ -65,7 +65,7 @@
                          ng-mouseenter="previewSession(session)"
                          ng-mouseleave="dismissPreviewSession(session)"
                          ng-class="{'session-selected' : session.selected, 'session-not-selected' : !session.selected, 'session-hovered' : session.hovered}"
-                         ng-click="selectSession(session);" />
-        </ul>
+                         ng-click="selectSession(session)"/>
+        </ul>    
     </tab>
 </tabset>

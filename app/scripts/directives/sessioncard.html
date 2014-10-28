@@ -1,4 +1,4 @@
-<li class="session-entry media">
+<li class="session-entry media" ng-click="showSessionModal(id)">
     <div class="media-body session-description-container">
             <h5 class="media-heading session-heading">{{ courseName }}</h5><span class="badge duration">{{ Math.floor(((endTime - startTime) % 86400000) / 3600000) }}h {{ (((endTime - startTime)  % 86400000) % 3600000) / 60000 }}m</span>
             <div class="session-description">
