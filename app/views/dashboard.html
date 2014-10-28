@@ -171,6 +171,7 @@
         <h4 style="pointer-events:none;" class="glyphicon glyphicon-session glyphicon-map-marker"><span class="h5 session-detail">{{ locationName }}<span class="divider">&#183;</span>Room: {{ roomNumber }}</span></h4>
 
         <a class="calendar-link" href="#" ng-click="addSessionToCalendar(id); $event.stopPropagation()"><h4 style="pointer-events:none;" class="glyphicon glyphicon-session glyphicon-time"><span class="h5 session-detail">{{ startTime.toLocaleDateString() }}<span class="divider">&#183;</span>{{ startTime.toLocaleTimeString() }}</span></h4></a>
+        <h4 class="glyphicon glyphicon-session glyphicon-session glyphicon-user"><span class="h5 session-detail"><strong>{{ coordinatorName }}</strong><span class="divider">&#183;</span><span ng-repeat="attendee in attendees">{{ attendee.first_name }} </span></h4>
 
       </div>
       <div class="modal-footer">

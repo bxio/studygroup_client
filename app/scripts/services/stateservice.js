@@ -76,7 +76,7 @@ angular.module('studygroupClientApp')
 
     // Parse session to Calendar object
     this.addToCalendar = function(sessionID) {
-      //return a iCal object
+      this.iCalObj = ics();
     }
 
     this.joinOrLeaveSession = function(sessionID) {
