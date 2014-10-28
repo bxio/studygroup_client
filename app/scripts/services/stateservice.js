@@ -75,11 +75,8 @@ angular.module('studygroupClientApp')
     });
 
     // Parse session to Calendar object
-    this.addToCalendar = function(session) {
-      console.log("AddToCalendar function inside stateservice called.");
+    this.addToCalendar = function(sessionID) {
       this.iCalObj = ics();
-      // this.iCalObj.addEvent(session.course.name, 'This is an event description from http://studyhostredux.cloudapp.net', session.location.name+" Room: "+session.room_number, session..start_time, session.end_time);
-      // return this.iCalObj.download();
     }
 
     this.joinOrLeaveSession = function(sessionID) {

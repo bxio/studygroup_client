@@ -8,7 +8,7 @@ angular.module('dashboardControllers', [])
     $scope.verifyPassword = "";
 
     // Session Modal helper
-    $scope.loadSessionModalDetails = function(){
+    $scope.loadSessionModalDetails = function(sessionID){
       $scope.courseName = StateService.selectedSession.course.name;
       $scope.courseId = StateService.selectedSession.id;
       $scope.startTime = StateService.selectedSession.start_time;
